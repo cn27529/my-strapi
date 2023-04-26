@@ -20,11 +20,11 @@
     "description": {
       "type": "richtext"
     },
-    "categories": {
+    "category": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::category.category",
-      "mappedBy": "restaurants"
+      "inversedBy": "restaurants"
     }
   }
 }
