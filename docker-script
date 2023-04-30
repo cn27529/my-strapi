@@ -1,0 +1,31 @@
+docker run -it \
+  -e DATABASE_NAME=strapi \
+  -e DATABASE_HOST=172.17.0.2 \
+  -e DATABASE_PORT=5432 \
+  -e DATABASE_USERNAME=strapi \
+  -e DATABASE_PASSWORD=strapi \
+  -p 1337:1337 \
+  -v `pwd`/Users/Cn27529/NodeWorkspace/my-strapi:/opt/app \
+  strapi/strapi
+
+
+
+docker build \
+  --build-arg NODE_ENV=production \
+  # --build-arg STRAPI_URL=https://api.example.com \ # Uncomment to set the Strapi Server URL
+  -t mystrapiapp:latest \ # Replace with your image name
+  -f Dockerfile.prod .
+  
+#執行dockerfile成為image,名為strapi
+docker build . -t strapi
+
+#172.17.0.2是 container 裡的IP，兩個
+docker run -it \
+  --name my-strapi \
+  -e DATABASE_NAME=strapi \
+  -e DATABASE_HOST=172.17.0.2 \
+  -e DATABASE_PORT=5432 \
+  -e DATABASE_USERNAME=strapi \
+  -e DATABASE_PASSWORD=strapi \
+  -p 8080:1337 \
+  strapi
