@@ -3,7 +3,7 @@ docker build \
   # --build-arg STRAPI_URL=https://api.example.com \ # Uncomment to set the Strapi Server URL
   -t mystrapi:latest \ # Replace with your image name
   -f Dockerfile.prod .
-  
+
 #執行dockerfile成為image,名為strapi
 docker build . -t strapi
 

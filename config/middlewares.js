@@ -24,5 +24,7 @@ module.exports = [
             },
         },
     },
+    //https://docs.strapi.io/dev-docs/deployment/nginx-proxy
+    { resolve: './src/middlewares/admin-redirect' },
 
 ];
