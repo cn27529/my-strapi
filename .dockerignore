@@ -1,2 +1,10 @@
-node_modules
+node_modules/
 npm-debug.log
+build/
+.temp
+.cache
+docker-script
+dockerfile
+dockerfile.prod
+
+
