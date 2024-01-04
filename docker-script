@@ -19,7 +19,7 @@ docker run -it \
     -p 8080:1337 \
     --net mynetwork \
     -v ./public/upload:/upload \
-    strapi:4.9.2
+    my-strapi
 
 
 
